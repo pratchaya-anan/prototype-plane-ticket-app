@@ -1,0 +1,121 @@
+<ion-header class="ion-no-border" mode="ios">
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-back-button color="danger"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Go with You</ion-title>
+        <ion-button slot="end" color="white" routerLink="/home-ticket">
+            <ion-icon name='home'></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-list>
+            <ion-item lines="full" color="tertiary">
+                <ion-select class="ion-no-padding ion-padding-end ion-select-full" okText="ตกลง" cancelText="ยกเลิก" interface="action-sheet" placeholder="เดินทางจาก">
+                    <ion-select-option value="BKK">ท่าอากาศยานสุวรรณภูมิ</ion-select-option>
+                    <ion-select-option value="DMK">ท่าอากาศยานดอนเมือง</ion-select-option>
+                    <ion-select-option value="Chiangrai">ท่าอากาศยานแม่ฟ้าหลวง</ion-select-option>
+                    <ion-select-option value="HGN">ท่าอากาศยานแม่ฮ่องสอน</ion-select-option>
+                    <ion-select-option value="CNX">ท่าอากาศยานเชียงใหม่</ion-select-option>
+                    <ion-select-option value="NNT">ท่าอากาศยานน่านนคร</ion-select-option>
+                    <ion-select-option value="PRH">ท่าอากาศยานแพร่</ion-select-option>
+                    <ion-select-option value="LPT">ท่าอากาศยานลำปาง</ion-select-option>
+                    <ion-select-option value="MAQ">ท่าอากาศยานแม่สอด</ion-select-option>
+                    <ion-select-option value="THS">ท่าอากาศยานสุโขทัย</ion-select-option>
+                    <ion-select-option value="PHS">ท่าอากาศยานพิษณุโลก</ion-select-option>
+                    <ion-select-option value="UTH">ท่าอากาศยานนานาชาติอุดรธานี</ion-select-option>
+                    <ion-select-option value="KOP">ท่าอากาศยานนครพนม</ion-select-option>
+                    <ion-select-option value="KKC">ท่าอากาศยานขอนแก่น</ion-select-option>
+                    <ion-select-option value="ROI">ท่าอากาศยานร้อยเอ็ด</ion-select-option>
+                </ion-select>
+
+                <ion-select class="ion-no-padding ion-padding-end ion-select-full" okText="ตกลง" cancelText="ยกเลิก" interface="action-sheet" placeholder="จุดหมาย">
+                    <ion-select-option value="tBKK">ท่าอากาศยานสุวรรณภูมิ</ion-select-option>
+                    <ion-select-option value="tDMK">ท่าอากาศยานดอนเมือง</ion-select-option>
+                    <ion-select-option value="tChiangrai">ท่าอากาศยานแม่ฟ้าหลวง</ion-select-option>
+                    <ion-select-option value="tHGN">ท่าอากาศยานแม่ฮ่องสอน</ion-select-option>
+                    <ion-select-option value="tCNX">ท่าอากาศยานเชียงใหม่</ion-select-option>
+                    <ion-select-option value="tNNT">ท่าอากาศยานน่านนคร</ion-select-option>
+                    <ion-select-option value="tPRH">ท่าอากาศยานแพร่</ion-select-option>
+                    <ion-select-option value="tLPT">ท่าอากาศยานลำปาง</ion-select-option>
+                    <ion-select-option value="tMAQ">ท่าอากาศยานแม่สอด</ion-select-option>
+                    <ion-select-option value="tTHS">ท่าอากาศยานสุโขทัย</ion-select-option>
+                    <ion-select-option value="tPHS">ท่าอากาศยานพิษณุโลก</ion-select-option>
+                    <ion-select-option value="tUTH">ท่าอากาศยานนานาชาติอุดรธานี</ion-select-option>
+                    <ion-select-option value="tKOP">ท่าอากาศยานนครพนม</ion-select-option>
+                    <ion-select-option value="tKKC">ท่าอากาศยานขอนแก่น</ion-select-option>
+                    <ion-select-option value="tROI">ท่าอากาศยานร้อยเอ็ด</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item lines="full" mode="ios">
+                <ion-input type="text" placeholder="จำนวนคน"></ion-input>
+                <input type="date" />
+                <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger">
+                    <ion-icon class="ion-no-margin" expand="full" name='search-sharp'></ion-icon>
+                </ion-fab-button>
+            </ion-item>
+        </ion-list>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row routerLink="/list-ticket">
+        <ion-col>
+            <ion-card *ngFor="let ticket of tickets">
+                <ion-img [src]="ticket.img"></ion-img>
+                <ion-card-header>
+                    <ion-card-subtitle> {{ticket.title}} </ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    {{ticket.description}}
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-item lines="full">
+        <ion-toolbar>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='car-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" routerLink="/plane-ticket">
+                            <ion-icon name='airplane-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='ticket-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='home-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='cart-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-toolbar>
+    </ion-item>
+</ion-footer>

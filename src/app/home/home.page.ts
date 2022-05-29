@@ -6,7 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public slideOpts = {
+    zoom: false,
+    slidesPerView: 4,
+    spaceBetween: 5,
+    centeredSlides: false,
+    autoplay: false,
+    loop: false,
+    freeMode: true
+  };
 
-  constructor() {}
+  constructor() {
+    
+  }
+  ngOnInit() {
+  }
 
 }

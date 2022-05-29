@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border" mode="ios">
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Go with You</ion-title>
+    </ion-toolbar>
+    <ion-item lines="full" mode="ios">
+        <ion-searchbar placeholder="ค้นหา"></ion-searchbar>
+        <ion-icon class="ion-no-margin" color="danger" name='search-circle' expand="full"></ion-icon>
+    </ion-item>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-row>
+        <ion-col>
+            <ion-card *ngFor="let data of datas">
+                <ion-img [src]="data.img"></ion-img>
+                <ion-card-header>
+                    <ion-card-subtitle> {{data.title}} </ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    {{data.description}}
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+    <ion-item lines="full">
+        <ion-toolbar>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" type="submit">
+                            <ion-icon name='car-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" type="submit" routerLink="/plane-ticket">
+                            <ion-icon name='airplane-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" type="submit">
+                            <ion-icon name='ticket-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" type="submit">
+                            <ion-icon name='home-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small ion-no-margin" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" type="submit">
+                            <ion-icon name='cart-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-toolbar>
+    </ion-item>
+</ion-footer>

@@ -1,0 +1,99 @@
+<ion-header class="ion-no-border" mode="ios">
+    <ion-toolbar class="new-background-color">
+        <ion-buttons slot="start">
+            <ion-back-button color="danger"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Go with You</ion-title>
+    </ion-toolbar>
+    <ion-item lines="full" mode="ios">
+        <ion-item color="tertiary">
+            <ion-select okText="ตกลง" cancelText="ยกเลิก" interface="action-sheet" placeholder="สายการบิน">
+                <ion-select-option value="air">AIR ASIA</ion-select-option>
+                <ion-select-option value="nok">NOK AIR</ion-select-option>
+                <ion-select-option value="tla">THAI LION AIR</ion-select-option>
+                <ion-select-option value="tsm">THAI SMILE</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item color="tertiary">
+            <ion-select okText="ตกลง" cancelText="ยกเลิก" interface="action-sheet" placeholder="การไปกลับ">
+                <ion-select-option value="go">ขาไป</ion-select-option>
+                <ion-select-option value="go-back">ไปกลับ</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item color="tertiary">
+            <ion-select okText="ตกลง" cancelText="ยกเลิก" interface="action-sheet" placeholder="ประเภท">
+                <ion-select-option value="min">ราคาถูกที่สุด</ion-select-option>
+                <ion-select-option value="mid">คุ้มราคา</ion-select-option>
+                <ion-select-option value="max">ชั้นพิเศษ</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item>
+</ion-header>
+
+<ion-content mode="ios">
+    <ion-list lines="none">
+        <ion-list-header lines="none" mode="md">
+            <ion-label>เลือกรายการ</ion-label>
+        </ion-list-header>
+        <ion-item button class="ion-margin-bottom" color="tertiary" *ngFor="let ticket of tickets" routerLink="/check-ticket">
+            <ion-avatar slot="start">
+                <ion-img [src]="ticket.img"></ion-img>
+            </ion-avatar>
+            <ion-label>
+                <b> {{ ticket.go }} > {{ ticket.to }} </b>
+                <ion-text color="medium">
+                    <h3> {{ ticket.gtime }}>{{ ticket.ttime }} {{ ticket.time }} </h3>
+                </ion-text>
+            </ion-label>
+            <ion-label slot="end" color="danger">
+                <ion-text>
+                    {{ ticket.price }}
+                </ion-text>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-item lines="full">
+        <ion-toolbar>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='car-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full" routerLink="/plane-ticket">
+                            <ion-icon name='airplane-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='ticket-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='home-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-fab-button class="fab-small" size="small" id="alignment-button" color="danger" class="ion-no-margin" expand="full">
+                            <ion-icon name='cart-outline'></ion-icon>
+                        </ion-fab-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-toolbar>
+    </ion-item>
+</ion-footer>

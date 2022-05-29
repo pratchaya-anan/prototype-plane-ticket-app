@@ -1,3 +1,7 @@
+.new-background-color {
+    --background: #ff0000;
+}
+
 ion-slides {
     height: 80px;
     ion-slide {
@@ -15,4 +19,9 @@ ion-slides {
     width: 10px !important;
     position: fixed;
     margin-left: -10px;
+}
+
+:root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
 }
